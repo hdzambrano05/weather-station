@@ -9,7 +9,7 @@ import serial
 import time
 
 # Port configuration
-arduino_port = 'COM8'
+arduino_port = 'COM10'
 arduino_bau = 9600
 
 # Initialize serial communication

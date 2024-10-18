@@ -33,6 +33,5 @@ user_model = '''
 cur.execute(user_model)
 
 #Close connection
-con.close
 
 

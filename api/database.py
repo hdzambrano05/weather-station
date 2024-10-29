@@ -17,7 +17,7 @@ cur = con.cursor()
 
 user_model = ''' 
     CREATE TABLE IF NOT EXISTS users (
-        id INTERGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY ,
         username TEXT NOT NULL,
         email TEXT NOT NULL,
         password TEXT NOT NULL,
@@ -27,6 +27,17 @@ user_model = '''
         update_at TIMESRAMP DEFAULT (datetime ('now', 'localtime')),
         deleted_at null
     )
+'''
+
+stations_model = '''
+    CREATE TABLE IF NOT EXISTS stations (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        description TEXT NOT NULL,
+        localation TEXT NOT NULL
+        status BOOLEAN DEFAULT true
+    )
+
 '''
 
 #Execute query

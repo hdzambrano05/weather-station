@@ -29,20 +29,26 @@ user_model = '''
     )
 '''
 
-stations_model = '''
-    CREATE TABLE IF NOT EXISTS stations (
+# Create model Sensores
+sensores_model = '''
+    CREATE TABLE IF NOT EXISTS sensores(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        description TEXT NOT NULL,
-        localation TEXT NOT NULL
-        status BOOLEAN DEFAULT true
+        temperature FLOAT NOT NULL,
+        humidity FLOAT NOT NULL,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
-
 '''
+
 
 #Execute query
 cur.execute(user_model)
+cur.execute(sensores_model)
 
 #Close connection
+# Commit and close connection
+con.commit()
+con.close()
+
+print("Database and tables created successfully.")
 
 
